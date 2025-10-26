@@ -1,16 +1,20 @@
+# Dockerfile para construcción desde el directorio raíz
+# Build con: docker build -f backend/Dockerfile .
 FROM python:3.11-slim
 
 WORKDIR /app
 
 # Copiar requirements
-COPY requirements-api.txt .
+COPY backend/requirements-api.txt ./requirements-api.txt
 RUN pip install --no-cache-dir -r requirements-api.txt
 
-# Copiar código
-COPY api/ ./api/
-COPY ../analysis/ ./analysis/
-COPY ../data/ ./data/
-COPY ../config/ ./config/
+# Copiar todo el código
+COPY backend/api/ ./api/
+COPY analysis/ ./analysis/
+COPY data/ ./data/
+COPY config/ ./config/
+
+# Copiar archivo Excel desde raíz
 COPY "Materia Prima Metal Veneta.xlsx" ./
 
 EXPOSE 8000
