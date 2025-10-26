@@ -1,0 +1,6 @@
+# Valores hipotéticos: ajustar cuando Metal Veneta entregue los rendimientos reales.
+default_delta_pct: 0.05
+overrides_pct:
+  B-UBC-1: 0.08
+  F-UBC-1: 0.06
+  G-MG-3: 0.04
