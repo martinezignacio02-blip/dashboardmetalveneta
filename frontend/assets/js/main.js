@@ -26,23 +26,15 @@ function renderKPIs(data) {
 async function init() {
     try {
         // Obtener datos del resumen
-        const resumenData = await getResumen();
+        const data = await getResumen();
         
         // Renderizar KPIs
-        renderKPIs(resumenData);
-        
-        // Obtener todos los datos para los gráficos
-        const todosLosDatos = await getRendimientos();
-        
-        // Crear gráfico de comparación de rendimientos
-        if (typeof createRendimientoChart !== 'undefined') {
-            createRendimientoChart(todosLosDatos);
-        }
+        renderKPIs(data);
         
         // Ocultar el indicador de carga
         document.getElementById('loading').classList.add('hidden');
         
-        console.log('Dashboard cargado exitosamente', resumenData);
+        console.log('Dashboard cargado exitosamente', data);
     } catch (error) {
         console.error('Error inicializando dashboard:', error);
         

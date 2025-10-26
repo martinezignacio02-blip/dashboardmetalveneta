@@ -4,19 +4,12 @@ from __future__ import annotations
 
 from pathlib import Path
 from typing import Any, Mapping
-import sys
 
 import yaml
 
 from .metrics import RendimientoConfig
 
-# Determinar la ruta del proyecto (directorio raíz)
-if __file__.endswith('.pyc'):
-    PROJECT_ROOT = Path(__file__).parent.parent.parent
-else:
-    PROJECT_ROOT = Path(__file__).parent.parent
-
-DEFAULT_CONFIG_PATH = PROJECT_ROOT / "config" / "rendimiento_base.yaml"
+DEFAULT_CONFIG_PATH = Path("config") / "rendimiento_base.yaml"
 
 
 def load_rendimiento_config(path: Path | None = None) -> RendimientoConfig:
