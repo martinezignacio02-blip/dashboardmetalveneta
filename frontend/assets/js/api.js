@@ -1,5 +1,6 @@
 // Configuración de la API
-const API_URL = 'http://localhost:8000';  // Cambiar a 'https://metal-veneta-api.onrender.com' en producción
+// const API_URL = 'http://localhost:8000';  // Local
+const API_URL = 'https://metal-veneta-api.onrender.com';  // Producción
 
 // Función para obtener el resumen de datos
 async function getResumen() {
