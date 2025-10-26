@@ -3,14 +3,14 @@ FROM python:3.11-slim
 WORKDIR /app
 
 # Copiar requirements
-COPY backend/requirements-api.txt .
+COPY requirements-api.txt .
 RUN pip install --no-cache-dir -r requirements-api.txt
 
 # Copiar código
-COPY backend/api/ ./api/
-COPY analysis/ ./analysis/
-COPY data/ ./data/
-COPY config/ ./config/
+COPY api/ ./api/
+COPY ../analysis/ ./analysis/
+COPY ../data/ ./data/
+COPY ../config/ ./config/
 COPY "Materia Prima Metal Veneta.xlsx" ./
 
 EXPOSE 8000
