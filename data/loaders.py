@@ -11,7 +11,13 @@ import pandas as pd
 
 LOGGER = logging.getLogger(__name__)
 
-DEFAULT_SOURCE = Path("Materia Prima Metal Veneta.xlsx")
+# Determinar la ruta del proyecto (directorio raíz)
+if __file__.endswith('.pyc'):
+    PROJECT_ROOT = Path(__file__).parent.parent.parent
+else:
+    PROJECT_ROOT = Path(__file__).parent.parent
+
+DEFAULT_SOURCE = PROJECT_ROOT / "Materia Prima Metal Veneta.xlsx"
 DEFAULT_SHEET = "Hoja1"
 
 # Mapping to normalize column names we plan to use downstream. The Excel file
