@@ -4,6 +4,8 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pathlib import Path
 import sys
+import uvicorn
+import os
 
 # Agregar el directorio raíz al path para importar los módulos existentes
 sys.path.append(str(Path(__file__).parent.parent.parent))
@@ -88,9 +90,6 @@ def get_resumen():
 
 
 if __name__ == "__main__":
-    import uvicorn
-    import os
-    
     # Render usa la variable de entorno PORT
     port = int(os.environ.get("PORT", 8000))
     uvicorn.run(app, host="0.0.0.0", port=port)

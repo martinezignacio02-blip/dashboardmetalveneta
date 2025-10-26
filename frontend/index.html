@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metal Veneta - Dashboard</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">Metal Veneta</h1>
+            <p class="subtitle">Análisis de Línea de Pretratamiento</p>
+        </div>
+    </header>
+
+    <!-- KPIs - Lo más importante primero -->
+    <section class="kpis">
+        <div class="container">
+            <h2 class="section-title">Resumen del Impacto</h2>
+            <div class="kpi-grid" id="kpis">
+                <div class="kpi-card loading">
+                    <div class="kpi-value">--</div>
+                    <div class="kpi-label">Cargando...</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Loading indicator -->
+    <div id="loading" class="loading-indicator">
+        <div class="spinner"></div>
+        <p>Cargando datos...</p>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>Los valores mostrados son proyecciones basadas en supuestos hipotéticos.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/api.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html> 
