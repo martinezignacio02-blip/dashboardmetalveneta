@@ -3,27 +3,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Metal Veneta - Dashboard</title>
+    <title>Metal Veneta - Tesis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
     <!-- Header -->
-    <header class="header">
+    <nav class="navbar">
         <div class="container">
-            <h1 class="logo">Metal Veneta</h1>
-            <p class="subtitle">Análisis de Línea de Pretratamiento</p>
+            <div class="university-header-logo">
+                <a href="https://www.ucc.edu.ar/" target="_blank" rel="noopener noreferrer">
+                    <img src="assets/images/image-removebg-preview.png" alt="Universidad Logo" class="university-logo-header">
+                </a>
+            </div>
+            <div class="authors-names">
+                <p>Josefina <strong>Damonte</strong></p>
+                <p>María Victoria <strong>Duarte</strong></p>
+                <p>Ignacio <strong>Martínez Pascazzi</strong></p>
+            </div>
+            <div class="logo-container">
+                <a href="https://metalveneta.com.ar/" target="_blank" rel="noopener noreferrer">
+                    <img src="assets/images/logo-metal-veneta-removebg-preview.png" alt="Metal Veneta Logo" class="logo-image">
+                </a>
+            </div>
         </div>
-    </header>
+    </nav>
 
-    <!-- KPIs - Lo más importante primero -->
-    <section class="kpis">
+    <!-- Imagen Hero con Título -->
+    <section class="hero-section">
+        <img src="assets/images/0AB69062-2206-48E3-91A3-D015ACD72EBE.JPG" alt="Horno industrial Metal Veneta" class="hero-image">
+        <div class="hero-overlay">
+            <h2 class="thesis-title-hero">Análisis de Implementación de una Línea de Pretratamiento de Chatarra en Fundición de Aluminio</h2>
+        </div>
+    </section>
+
+    <!-- Sección: Importancia del Aluminio -->
+    <section id="importancia" class="section">
+        <div class="container">
+            <h2 class="section-title" style="max-width: 600px;">¿Por qué es tan relevante el <span class="highlight-red">aluminio</span>?</h2>
+            
+            <p style="font-size: 2rem; line-height: 2; color: #ddd; margin-bottom: 4rem; max-width: 900px; margin-left: auto; margin-right: auto; text-align: left;">
+                El aluminio es el <span style="font-size: 5rem; font-weight: 900; color: var(--rojo); line-height: 1; vertical-align: middle;">tercer</span> elemento más abundante en la corteza terrestre.
+            </p>
+            
+            <!-- Contenedor para el gráfico interactivo -->
+            <div id="chart-container" style="max-width: 800px; margin: 0 auto;">
+                <canvas id="abundanceChart"></canvas>
+            </div>
+            
+            <p style="font-size: 0.9rem; line-height: 1.6; color: #888; margin-top: 2rem; margin-bottom: 4rem; max-width: 800px; margin-left: auto; margin-right: auto; text-align: center;">
+                <a href="https://pubs.acs.org/doi/abs/10.1021/ed031p446" target="_blank" rel="noopener noreferrer" style="color: #aaa; text-decoration: underline;">The abundance and distribution of the chemical elements in the earth's crust</a>
+            </p>
+        </div>
+    </section>
+
+    <!-- Sección: Usos del Aluminio -->
+    <section id="usos-aluminio" class="section">
+        <div class="container">
+            <h2 class="section-title">El aluminio se utiliza en:</h2>
+            
+            <div id="usos-list" class="usos-container">
+                <!-- Los elementos de la lista se agregarán dinámicamente -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección: Reciclaje del Aluminio -->
+    <section id="reciclaje" class="section highlight">
+        <div class="container">
+            <h2 class="section-title" style="max-width: 800px;">El aluminio es el material más <span class="highlight-red">reciclado</span> y <span class="highlight-red">reciclable</span></h2>
+            
+            <div class="reciclaje-content">
+                <p style="font-size: 1.3rem; line-height: 1.8; color: #ccc; text-align: center; max-width: 900px; margin: 0 auto; padding: 2rem 0;">
+                    El aluminio puede ser reciclado infinitamente sin perder sus propiedades, convirtiéndolo en uno de los materiales más sostenibles y valiosos para la economía circular. <strong style="color: var(--rojo);">Casi el 75% del aluminio producido a lo largo de la historia todavía está en uso hoy en día</strong>, demostrando su potencial para la sostenibilidad a largo plazo.
+                </p>
+            </div>
+        </div>
+        
+        <div style="font-size: 0.9rem; line-height: 1.8; color: #888; margin-top: 3rem; text-align: right; max-width: 1200px; margin-left: auto; margin-right: auto; padding: 0 20px;">
+            <div><a href="https://international-aluminium.org/landing/aluminium-is-infinitely-recyclable/" target="_blank" rel="noopener noreferrer" style="color: var(--rojo); text-decoration: underline; font-weight: 600;">Aluminium is infinitely recyclable</a></div>
+            <div><a href="https://international-aluminium.org/landing/75-of-all-aluminium-ever-produced-is-still-in-use-today/" target="_blank" rel="noopener noreferrer" style="color: var(--rojo); text-decoration: underline; font-weight: 600;">75% of all aluminium ever produced is still in use today</a></div>
+        </div>
+    </section>
+
+    <!-- Sección: Resumen del Impacto (KPIs) -->
+    <section id="rendimientos" class="section highlight">
         <div class="container">
             <h2 class="section-title">Resumen del Impacto</h2>
+            <p class="subtitle-text">Comparación de rendimientos entre línea actual y nueva línea de pretratamiento</p>
+            
             <div class="kpi-grid" id="kpis">
                 <div class="kpi-card loading">
                     <div class="kpi-value">--</div>
                     <div class="kpi-label">Cargando...</div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección: Proceso Productivo -->
+    <section id="proceso" class="section">
+        <div class="container">
+            <h2 class="section-title">Proceso Productivo</h2>
+            <div class="content-box">
+                <h3>Descripción del Proceso</h3>
+                <p class="coming-soon">
+                    Diagrama de flujo y descripción del proceso productivo actual vs. con la nueva línea de pretratamiento.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección: Análisis de Producción -->
+    <section id="produccion" class="section highlight">
+        <div class="container">
+            <h2 class="section-title">Análisis de Producción</h2>
+            <div class="content-box">
+                <h3>Capacidad Productiva</h3>
+                <ul class="coming-soon">
+                    <li>Producción bruta y neta</li>
+                    <li>Capacidad de planta (teórica y real)</li>
+                    <li>Eficiencia y rechazo de las máquinas</li>
+                    <li>Cantidad de máquinas</li>
+                    <li>Balanceo de la línea productiva</li>
+                </ul>
             </div>
         </div>
     </section>
@@ -37,12 +142,20 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>Los valores mostrados son proyecciones basadas en supuestos hipotéticos.</p>
+            <div class="footer-text">
+                <p>Los valores mostrados son proyecciones basadas en supuestos hipotéticos.</p>
+                <p>Trabajo Final - Universidad Católica de Córdoba</p>
+            </div>
         </div>
     </footer>
 
     <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
     <script src="assets/js/api.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/animations.js"></script>
+    <script src="assets/js/chart.js"></script>
+    <script src="assets/js/usos-aluminio.js"></script>
 </body>
 </html> 
